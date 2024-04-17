@@ -31,11 +31,12 @@ def get_members():
     response_body = jackson_family.get_all_members()
     return jsonify(response_body), 200
 
-@app.route('/member/<int:member_id>', methods=['GET'])
-def get_one_member(id):
 
-    response_body = jackson_family.get_member(id)
-    return jsonify(response_body), 200
+@app.route('/member/<int:member_id>', methods=['GET'])
+def get_member(member_id):
+    one_member = jackson_family.get_member(member_id)
+    return jsonify(one_member), 200
+
 
 @app.route('/member', methods=['POST'])
 def add_member():
