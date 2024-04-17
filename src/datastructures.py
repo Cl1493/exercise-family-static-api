@@ -13,6 +13,7 @@ class FamilyStructure:
         self.last_name = last_name
 
         # example list of members
+
         self._members = [
             {
             "id": self._generateId(),
@@ -52,15 +53,16 @@ class FamilyStructure:
 
     def delete_member(self, id):
         for member in self._members:
-            if (member[id] == self._members["id"]):
+            if member["id"] == id:
                 self._members.remove(member)
-            return True  
+                return True
         # fill this method and update the return
     pass
 
     def get_member(self, id):
         for member in self._members:
-        return member["id"] == id
+            if member["id"] == id:
+                return member
         # fill this method and update the return
     pass
 
